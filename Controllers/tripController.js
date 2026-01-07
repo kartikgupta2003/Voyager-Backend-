@@ -12,7 +12,7 @@ const createTrip = asyncHandler(async(req,res,next)=>{
     // console.log("Trip controller me to phuc gyaa")
 
     try{
-        const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-lite" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
         const prompt = `Generate a travel plan in STRICT JSON format following this exact structure:
 
 {
@@ -112,8 +112,8 @@ Also consider the user preferences: ${preferences}
     } catch(err){
       // console.log(err);
         const error = new Error("AI service failed!");
-        // console.log(err);
-        next(err);
+        console.log(err);
+        next(error);
     }
 })
 
