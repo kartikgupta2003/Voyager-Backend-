@@ -24,7 +24,8 @@ app.set("trust proxy", true);
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://voyager-frontend-one.vercel.app"
+  "https://voyager-frontend-one.vercel.app" ,
+  "http://localhost:3000"
 ];
 
 app.use((req, res, next) => {
